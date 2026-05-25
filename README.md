@@ -10,7 +10,7 @@ It is a complete system in three layers:
 
 [![CI](https://github.com/MakingJamie/apple-ads-mcp-agent/actions/workflows/ci.yml/badge.svg)](https://github.com/MakingJamie/apple-ads-mcp-agent/actions/workflows/ci.yml)
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](./LICENSE)
-![Node](https://img.shields.io/badge/node-%3E%3D18-brightgreen)
+![Node](https://img.shields.io/badge/node-%3E%3D20-brightgreen)
 
 > Not affiliated with, endorsed by, or sponsored by Apple Inc. "Apple Search Ads" is a trademark of Apple Inc., used here only to describe what this tool integrates with.
 
