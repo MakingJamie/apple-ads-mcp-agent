@@ -272,10 +272,9 @@ server.tool(
       (val) => typeof val === 'string' ? JSON.parse(val) : val,
       z.array(z.string())
     ).describe('ISO country codes (e.g., ["US"])'),
-    adamId: (DEFAULT_ADAM_ID
-      ? z.string().default(DEFAULT_ADAM_ID)
-      : z.string()
-    ).describe('App Store app ID (adamId). Defaults to APPLE_ADS_DEFAULT_ADAM_ID if set, otherwise required.'),
+    adamId: DEFAULT_ADAM_ID
+      ? z.string().default(DEFAULT_ADAM_ID).describe(`App Store app ID (adamId). Defaults to the configured ${DEFAULT_ADAM_ID}.`)
+      : z.string().describe('App Store app ID (adamId). Required, or set APPLE_ADS_DEFAULT_ADAM_ID to default it.'),
     status: z.enum(['ENABLED', 'PAUSED']).default('PAUSED').describe('Initial campaign status'),
     currency: z.string().default(DEFAULT_CURRENCY).describe('Currency code (defaults to APPLE_ADS_CURRENCY)'),
   },

@@ -37,6 +37,10 @@ interface CreateAdGroupParams {
   currency?: string;
 }
 
+// The `|| 'USD'` below (and in the other write functions in this file) is a
+// last-resort guard for direct callers. In normal operation index.ts always passes
+// a resolved currency (APPLE_ADS_CURRENCY via config.getDefaultCurrency()), so this
+// fallback only applies if a tool function is called without one.
 export async function createCampaign(
   client: AppleAdsClient,
   params: CreateCampaignParams
