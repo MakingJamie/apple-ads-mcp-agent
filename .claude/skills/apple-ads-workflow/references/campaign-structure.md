@@ -1,4 +1,4 @@
-# Campaign Structure — Apple Search Ads
+# Campaign Structure: Apple Search Ads
 
 This document defines the campaign architecture, naming conventions, match type strategy, negative keyword rules, CPP alignment, and targeting defaults.
 
@@ -10,7 +10,7 @@ Throughout, illustrative examples are drawn from a meditation app to make the me
 
 The recommended structure is a four-campaign architecture per locale. Each campaign serves a distinct strategic purpose. Not every account runs all four (some skip Brand or Competitor depending on strategy and budget). Decide which to run in your guardrails.
 
-### Brand campaign — `<Prefix>_Brand_{Locale}`
+### Brand campaign: `<Prefix>_Brand_{Locale}`
 
 **Purpose**: Defend brand terms and capture navigational searches.
 
@@ -23,7 +23,7 @@ The recommended structure is a four-campaign architecture per locale. Each campa
 
 > **When to skip Brand**: if your brand name has very little search volume, brand defense may not be worth the spend at an early stage. This is a strategy decision to record in your guardrails.
 
-### Category campaign — `<Prefix>_Category_{Locale}`
+### Category campaign: `<Prefix>_Category_{Locale}`
 
 **Purpose**: Capture high-intent category searches from users looking for an app like yours.
 
@@ -34,7 +34,7 @@ The recommended structure is a four-campaign architecture per locale. Each campa
 - **Budget priority**: Highest absolute spend. This is the primary acquisition engine
 - **CPP**: Theme-aligned (see CPP Alignment section below)
 
-### Competitor campaign — `<Prefix>_Competitor_{Locale}`
+### Competitor campaign: `<Prefix>_Competitor_{Locale}`
 
 **Purpose**: Intercept users searching for competing apps.
 
@@ -47,7 +47,7 @@ The recommended structure is a four-campaign architecture per locale. Each campa
 - **Important**: Ad copy must NEVER mention competitor names. Apple Search Ads policy prohibits this
 - **When to skip Competitor**: many accounts choose not to bid on competitor terms at all. This is a strategy decision to record in your guardrails.
 
-### Discovery campaign — `<Prefix>_Discovery_{Locale}`
+### Discovery campaign: `<Prefix>_Discovery_{Locale}`
 
 **Purpose**: Find new converting search terms through Search Match and broad keywords.
 
@@ -88,13 +88,13 @@ Ad groups within campaigns follow: `{Theme}_{MatchType}`
 ### Broad Match
 - Targets the keyword and related terms Apple deems relevant
 - Use for: category exploration in Discovery campaign, new keyword testing in Category
-- Requires active monitoring — add negatives for irrelevant matches
+- Requires active monitoring: add negatives for irrelevant matches
 - Promote high-converting broad matches to exact match in Category campaign
 
 ### Search Match
 - Apple automatically matches your ad to relevant searches based on app metadata
 - Use for: Discovery campaign only
-- No keyword control — relies entirely on Apple's matching algorithm
+- No keyword control: relies entirely on Apple's matching algorithm
 - Critical to negate all Brand + Category exact-match keywords to avoid cannibalizing those campaigns
 
 ---

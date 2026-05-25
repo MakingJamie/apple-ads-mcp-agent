@@ -38,7 +38,7 @@ src/
 ```
 
 ## Key Design Decisions
-- **No sandbox**: Apple Search Ads API has no sandbox — all tests mock at the client level
+- **No sandbox**: Apple Search Ads API has no sandbox, so all tests mock at the client level
 - **PKEI server-side**: PKEI scores are calculated in the MCP server, not by the agent
 - **Rate limit awareness**: `X-Rate-Limit` header parsed on every response; impression share capped at 10/day
 - **Token auto-refresh**: Tokens cached and refreshed 60s before 3600s expiry

@@ -8,7 +8,7 @@ user-invocable: false
 
 This skill provides the domain knowledge for Apple Search Ads campaign management. It is designed to be loaded by the Apple Ads agent (`.claude/agents/apple-ads-agent.md`) and provides workflow instructions, file path references, and pointers to validation rules.
 
-> **Authoritative guardrails**: `docs/apple-ads/.claude/CLAUDE.md` — always read at the start of each cycle. The CLAUDE.md guardrails override anything in this skill if there is a conflict.
+> **Authoritative guardrails**: `docs/apple-ads/.claude/CLAUDE.md`. Always read at the start of each cycle. The CLAUDE.md guardrails override anything in this skill if there is a conflict.
 
 ---
 
@@ -23,7 +23,7 @@ Each full cycle takes the agent through all 4 phases sequentially. Lighter invoc
 
 ---
 
-## Phase 1 — Data Collection
+## Phase 1: Data Collection
 
 ### Step 1: Create the data folder
 
@@ -91,7 +91,7 @@ If you do not maintain an ASO data source, skip this step and use a relevance mu
 
 ---
 
-## Phase 2 — Analysis
+## Phase 2: Analysis
 
 **Non-English locale rule (applies to ALL steps below):**
 For any non-English storefront (examples: BR, DE, ES, FR), ALL keyword and search term tables must include an **"EN Translation"** column with the English translation or explanation. This applies to PKEI tables, search term tables, negation candidates, graduation candidates, and any table where a keyword or search term is presented for evaluation. Proper nouns (brand names) should be labeled as such with a brief description (e.g., "Acme Bank, a banking brand"). This ensures the operator can evaluate terms without needing to translate them independently.
@@ -125,7 +125,7 @@ Review Discovery campaign search terms for keywords ready to graduate to exact-m
 ### Step 4: Search term analysis
 
 From search-terms.csv, identify:
-- **High-converting terms not yet exact-match** — promote candidates (check against graduation candidates from Step 3 to avoid duplication)
+- **High-converting terms not yet exact-match**: promote candidates (check against graduation candidates from Step 3 to avoid duplication)
 - **Negation candidates**: systematic scan, not anecdotal. Criteria (any ONE sufficient):
   - Navigational/brand terms for other apps or services
   - Completely unrelated to your app's category
@@ -137,8 +137,8 @@ From search-terms.csv, identify:
 ### Step 5: Budget utilization review
 
 From campaign-performance.csv:
-- Campaigns consistently hitting daily cap — consider increasing
-- Campaigns under 50% utilization — consider reducing or pausing underperforming keywords
+- Campaigns consistently hitting daily cap: consider increasing
+- Campaigns under 50% utilization: consider reducing or pausing underperforming keywords
 
 ### Step 6: Cross-pollination findings (optional, if you track ASO data)
 
@@ -152,7 +152,7 @@ Write all findings to `docs/apple-ads/strategy/YYYY-MM-DD/agent-notes.md`
 
 ---
 
-## Human Gate 1 — Strategy Brief
+## Human Gate 1: Strategy Brief
 
 Present to the operator using `references/strategy-brief-template.md` format.
 
@@ -170,7 +170,7 @@ Required sections:
 
 ---
 
-## Phase 3 — Recommendations
+## Phase 3: Recommendations
 
 Based on the operator's feedback from Gate 1:
 
@@ -186,7 +186,7 @@ For each keyword recommendation:
 
 If shifting budget between campaigns:
 - Current allocation -> Proposed allocation
-- Percentage change (must not exceed 30% shift ceiling — see `references/budget-guardrails.md`)
+- Percentage change (must not exceed 30% shift ceiling, see `references/budget-guardrails.md`)
 - Rationale
 
 ### Step 3: Keyword additions
@@ -210,7 +210,7 @@ Non-converting search terms:
 
 ---
 
-## Human Gate 2 — Final Review
+## Human Gate 2: Final Review
 
 Present specific changes with before/after values:
 
@@ -225,7 +225,7 @@ Present specific changes with before/after values:
 
 ---
 
-## Phase 4 — Documentation
+## Phase 4: Documentation
 
 ### Step 1: Update changelog
 
@@ -283,9 +283,9 @@ If any pattern has repeated across 2+ cycles, flag it for promotion to CLAUDE.md
 ## File Path Reference
 
 ### Guardrails & Strategy
-- `docs/apple-ads/.claude/CLAUDE.md` — authoritative guardrails
-- `docs/apple-ads/strategy/asa-strategy.md` — evergreen strategy
-- `docs/apple-ads/changelog.md` — campaign change log
+- `docs/apple-ads/.claude/CLAUDE.md`: authoritative guardrails
+- `docs/apple-ads/strategy/asa-strategy.md`: evergreen strategy
+- `docs/apple-ads/changelog.md`: campaign change log
 
 ### Templates
 - `docs/apple-ads/strategy/_templates/cycle-review.md`

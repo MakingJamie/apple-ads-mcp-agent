@@ -1,4 +1,4 @@
-# Apple Ads Strategy Brief — YYYY-MM-DD
+# Apple Ads Strategy Brief: YYYY-MM-DD
 
 Use this format when presenting analysis to the operator at **Human Gate 1** (after data collection and analysis, before recommendations).
 

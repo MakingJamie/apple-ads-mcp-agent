@@ -1,4 +1,4 @@
-# Budget Guardrails — Apple Search Ads
+# Budget Guardrails: Apple Search Ads
 
 These guardrails define spending limits, allocation rules, and escalation protocols for all Apple Search Ads campaigns. The agent must never exceed these limits without explicit human gate approval.
 

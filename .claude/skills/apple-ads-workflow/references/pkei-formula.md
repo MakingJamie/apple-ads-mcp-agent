@@ -1,4 +1,4 @@
-# PKEI (Paid Keyword Efficiency Index) — Formula Specification
+# PKEI (Paid Keyword Efficiency Index): Formula Specification
 
 PKEI measures the paid search efficiency of a keyword, combining conversion performance with cost efficiency and organic relevance. It is the paid-search counterpart to a KEI (Keyword Effectiveness Index) for organic rankings, if you track one.
 
@@ -38,19 +38,19 @@ The relevance multiplier rewards keywords where paid and organic presence reinfo
 
 | PKEI Range | Classification | Action |
 |---|---|---|
-| > 10.0 | Exceptional | Increase bid to capture more volume — this keyword is highly efficient |
-| 5.0 - 10.0 | Strong | Maintain or slightly increase bid — monitor for consistency |
-| 3.0 - 5.0 | Good | Hold current bid — performing well within acceptable range |
-| 2.0 - 3.0 | Moderate | Review bid and CPA — may need optimization or CPP alignment |
-| 1.0 - 2.0 | Weak | Reduce bid or pause — reassess keyword-to-CPP match |
-| < 1.0 | Poor | Pause unless brand keyword — investigate why it's underperforming |
+| > 10.0 | Exceptional | Increase bid to capture more volume. This keyword is highly efficient |
+| 5.0 - 10.0 | Strong | Maintain or slightly increase bid. Monitor for consistency |
+| 3.0 - 5.0 | Good | Hold current bid. Performing well within acceptable range |
+| 2.0 - 3.0 | Moderate | Review bid and CPA. May need optimization or CPP alignment |
+| 1.0 - 2.0 | Weak | Reduce bid or pause. Reassess keyword-to-CPP match |
+| < 1.0 | Poor | Pause unless brand keyword. Investigate why it's underperforming |
 
 ---
 
 ## Minimum Data Requirements
 
-- **Minimum impressions**: 100 — do not calculate PKEI for keywords with fewer than 100 impressions
-- **Minimum taps**: 5 — keywords with fewer than 5 taps have unreliable CR; flag as `INSUFFICIENT DATA`
+- **Minimum impressions**: 100. Do not calculate PKEI for keywords with fewer than 100 impressions
+- **Minimum taps**: 5. Keywords with fewer than 5 taps have unreliable CR; flag as `INSUFFICIENT DATA`
 - **Reporting window**: Use the full cycle window (7 days for check-ins, 30 days for full cycles) to aggregate metrics before calculating PKEI
 
 Keywords below minimum thresholds should be listed separately in `pkei-summary.md` under "Insufficient Data" with their current impression/tap counts.
@@ -69,8 +69,8 @@ If you DO run a Brand campaign, brand keywords are the exception. They are typic
 
 PKEI thresholds are initial estimates based on the formula's mathematical properties. After the first 3 full cycles with real data, review the actual distribution of PKEI scores:
 
-- If most keywords cluster above 5.0, thresholds may be too generous — tighten them
-- If most keywords cluster below 2.0, thresholds may be too strict — loosen them
+- If most keywords cluster above 5.0, thresholds may be too generous: tighten them
+- If most keywords cluster below 2.0, thresholds may be too strict: loosen them
 - Track calibration observations in `.claude/agent-memory/apple-ads-agent/MEMORY.md`
 
 **Recalibration process**:
@@ -112,7 +112,7 @@ This section applies only if you also track an organic KEI. If you do not, PKEI 
 | High | High (strong) | High | Strong keyword overall. Paid reinforces organic. | Maintain both; consider increasing paid bid for dominance |
 | Low | Any | High | Converts well in paid but limited organic opportunity. | Continue paid investment; organic unlikely to improve |
 | High | Low (poor) | Low | Organic opportunity exists but paid is inefficient. | Focus on organic; reduce paid spend or improve CPP alignment |
-| High | High (strong) | Low | Good organic position but paid is inefficient. | May not need paid — organic carries the traffic. Consider pausing paid |
+| High | High (strong) | Low | Good organic position but paid is inefficient. | May not need paid. Organic carries the traffic. Consider pausing paid |
 | Low | Any | Low | Weak in both channels. | Deprioritize entirely unless brand term |
 
 ---
@@ -143,7 +143,7 @@ PKEI = (0.0682 x 0.0898) / max(0.60, 0.01) x 1.5
      = 0.01532
 ```
 
-Raw PKEI = 0.01532. If normalization factor of 100 is applied: PKEI = 1.532 (Weak — review bid and CPP alignment).
+Raw PKEI = 0.01532. If normalization factor of 100 is applied: PKEI = 1.532 (Weak, review bid and CPP alignment).
 
 ---
 
@@ -152,7 +152,7 @@ Raw PKEI = 0.01532. If normalization factor of 100 is applied: PKEI = 1.532 (Wea
 The `pkei-summary.md` file should follow this structure:
 
 ```markdown
-# PKEI Summary — YYYY-MM-DD
+# PKEI Summary: YYYY-MM-DD
 
 ## Overview
 - Keywords analyzed: {N}
