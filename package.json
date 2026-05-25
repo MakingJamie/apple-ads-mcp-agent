@@ -1,0 +1,57 @@
+{
+  "name": "apple-ads-mcp-agent",
+  "version": "1.0.0",
+  "description": "Autonomous Apple Search Ads campaign manager: an MCP server (Apple Search Ads API v5) plus a Claude agent and skill that run PKEI-scored bid optimization, keyword mining, and budget allocation with human-approval gates.",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "apple-ads-mcp-agent": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    ".env.example"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "start": "node dist/index.js"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "apple-search-ads",
+    "apple-ads",
+    "aso",
+    "app-store-optimization",
+    "claude",
+    "anthropic",
+    "ai-agent",
+    "advertising-automation"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MakingJamie/apple-ads-mcp-agent.git"
+  },
+  "homepage": "https://github.com/MakingJamie/apple-ads-mcp-agent#readme",
+  "bugs": {
+    "url": "https://github.com/MakingJamie/apple-ads-mcp-agent/issues"
+  },
+  "author": "Jamie Murphy <hello@jamie-murphy.com>",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.1",
+    "jose": "^6.0.11",
+    "zod": "^3.24.4"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.3",
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.2"
+  }
+}

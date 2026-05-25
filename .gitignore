@@ -1,0 +1,42 @@
+# --- Dependencies & build ---
+node_modules/
+dist/
+
+# --- Secrets & credentials (NEVER commit) ---
+.env
+.env.*
+!.env.example
+*.pem
+.codex/
+
+# --- OS / editor noise ---
+.DS_Store
+*.log
+
+# =====================================================================
+#  Account data the agent generates over time. Ship-safe by default:
+#  the methodology and templates are committed, your data never is.
+#  Folder structure is preserved via committed .gitkeep stubs.
+# =====================================================================
+
+# Performance snapshots (CSV/JSON, PKEI summaries)
+docs/apple-ads/data/*
+!docs/apple-ads/data/.gitkeep
+
+# Per-cycle strategy and analysis (keep the templates + the stub)
+docs/apple-ads/strategy/*
+!docs/apple-ads/strategy/.gitkeep
+!docs/apple-ads/strategy/_templates/
+
+# Investigations and meeting notes (may contain PII)
+docs/apple-ads/investigations/*
+!docs/apple-ads/investigations/.gitkeep
+docs/apple-ads/meetings/*
+!docs/apple-ads/meetings/.gitkeep
+
+# Change log and contacts (your real campaign history / PII)
+docs/apple-ads/changelog.md
+docs/apple-ads/contacts.md
+
+# Agent memory: cross-cycle notes and the change ledger
+.claude/agent-memory/
